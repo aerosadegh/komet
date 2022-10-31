@@ -1,3 +1,5 @@
+"""simplified idea for tail print"""
+
 from collections import deque
 from random import choices, randint
 from string import ascii_letters
