@@ -3,6 +3,6 @@
 [![license](https://img.shields.io/github/license/aerosadegh/comet.svg?style=for-the-badge)](https://github.com/aerosadegh/comet/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/aerosadegh/comet.svg?style=for-the-badge&label=Stars)](https://github.com/aerosadegh/comet)
 
-# Comet
+# Komet
 
 A simple class for print python objects with tails.
