@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-version = "0.2.0"
+version = "0.3.0"
 DESCRIPTION = "A print package"
 LONG_DESCRIPTION = "A simple class for print python objects with tails."
 
