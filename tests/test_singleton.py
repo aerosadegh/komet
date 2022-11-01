@@ -1,6 +1,6 @@
 import pytest
 
-from comet import TailPrint
+from komet import TailPrint
 
 from .instances import instance
 
