@@ -11,10 +11,13 @@ setup(
     long_description=LONG_DESCRIPTION,
     author="Sadegh Yazdani",
     author_email="m.s.yazdani85@gmail.com",
-    license="MIT",
+    license="GPLv3",
+    project_urls={
+        "Source Code": "https://github.com/aerosadegh/komet/",
+    },
     packages=find_packages(),
     install_requires=[],
-    keywords="conversion",
+    keywords="printing",
     classifiers=[
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
