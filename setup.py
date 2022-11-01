@@ -5,7 +5,7 @@ DESCRIPTION = "A print package"
 LONG_DESCRIPTION = "A simple class for print python objects with tails."
 
 setup(
-    name="comet",
+    name="komet",
     version=version,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
