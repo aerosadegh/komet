@@ -25,7 +25,7 @@ jobs:
             sudo pip install pipenv
             pipenv install twine
             export PYPI_CONFIG="${HOME}/.pypirc"
-            echo $'[pypi]' > $PYPI_CONFIG
+            echo $'[distutils]\nindex-servers = pypi\n[pypi]' > $PYPI_CONFIG
             echo "username=$PYPI_USERNAME" >> $PYPI_CONFIG
             echo "password=$PYPI_PASSWORD" >> $PYPI_CONFIG
             pipenv run twine upload --repository testpypi dist/*
@@ -40,7 +40,7 @@ jobs:
             sudo pip install pipenv
             pipenv install twine
             export PYPI_CONFIG="${HOME}/.pypirc"
-            echo $'[pypi]' > $PYPI_CONFIG
+            echo $'[distutils]\nindex-servers = pypi\n[pypi]' > $PYPI_CONFIG
             echo "username=$PYPI_USERNAME" >> $PYPI_CONFIG
             echo "password=$PYPI_PASSWORD" >> $PYPI_CONFIG
             pipenv run twine upload dist/*
