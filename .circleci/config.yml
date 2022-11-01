@@ -27,7 +27,7 @@ jobs:
             export PYPI_CONFIG="${HOME}/.pypirc"
             echo $'[distutils]\nindex-servers = testpypi\n[testpypi]' > $PYPI_CONFIG
             echo "username=$PYPI_USERNAME" >> $PYPI_CONFIG
-            echo "password=$PYPI_PASSWORD" >> $PYPI_CONFIG
+            echo "password=$PIPY_TEST_TOKEN" >> $PYPI_CONFIG
             pipenv run twine upload --repository testpypi dist/*
   pypi_publish:
     docker:
