@@ -18,23 +18,32 @@ class TailPrint(metaclass=ThreadSafeSingletonMeta):
     def __init__(self, max_count=5, delay=0.05) -> None:
         self.deq = deque(maxlen=max_count)
         self.delay = delay
-        self.deq.append("")
+        self.line_count = 0
 
     def _clear(self) -> None:
         """clear all previous lines from stdout."""
-        for _ in range(len(self.deq)):
+        for _ in range(self.line_count):
             stdout.write("\x1b[1A\x1b[2K")  # move up cursor and delete whole line
 
     def _print(self) -> None:
         """print all items in deque on stdout."""
-        stdout.write("\n".join(self.deq) + "\n")  # print the lines
+        res = "".join(self.deq)
+        res += "\n" if not res.endswith("\n") else ""
+        self.line_count = res.count("\n")
+        stdout.write(res)  # print the lines
         sleep(self.delay)
 
     def __call__(self, *args: Iterable[str], sep: str = " ", end="\n") -> None:
         self._clear()
-        self.deq.append(
-            sep.join(map(lambda x: str(x), args))
-        )  # remove first element and append new to the end
+        item = sep.join(map(lambda x: str(x), args)) + end
+        if self.deq:
+            if self.deq[-1][-1] != "\n":
+                self.deq[-1] += item
+            else:
+                self.deq.append(item)  # remove first element and append new to the end
+        else:
+            self.deq.append(item)  # remove first element and append new to the end
+
         self._print()
 
 

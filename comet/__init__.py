@@ -4,4 +4,4 @@ __all__ = [
 ]
 
 from .tail import TailPrint
-from version import __version__
+from .version import __version__
