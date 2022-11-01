@@ -24,6 +24,9 @@ jobs:
             python setup.py sdist bdist_wheel
             sudo pip install pipenv
             pipenv install twine
+            echo $'[distutils]\nindex-servers = pypi\n[pypi]' > $PYPI_CONFIG
+            echo "username=$PYPI_USERNAME" >> $PYPI_CONFIG
+            echo "password=$PYPI_PASSWORD" >> $PYPI_CONFIG
             pipenv run twine upload --repository testpypi dist/*
   pypi_publish:
     docker:
@@ -35,6 +38,9 @@ jobs:
             python setup.py sdist bdist_wheel
             sudo pip install pipenv
             pipenv install twine
+            echo $'[distutils]\nindex-servers = pypi\n[pypi]' > $PYPI_CONFIG
+            echo "username=$PYPI_USERNAME" >> $PYPI_CONFIG
+            echo "password=$PYPI_PASSWORD" >> $PYPI_CONFIG
             pipenv run twine upload dist/*
 workflows:
   build_test_publish:
