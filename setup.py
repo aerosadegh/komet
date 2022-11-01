@@ -16,7 +16,7 @@ setup(
     install_requires=[],
     keywords="conversion",
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 1 - Beta",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
